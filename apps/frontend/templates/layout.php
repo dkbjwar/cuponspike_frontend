@@ -40,6 +40,16 @@
       </div>
     </nav>
     <div class="container">
+      <?php if ($sf_user->hasFlash('notice')): ?>
+          <div class="alert alert-success">
+            <strong><?php echo $sf_user->getFlash('notice') ?></strong>
+          </div>
+      <?php endif ?>
+      <?php if ($sf_user->hasFlash('err')): ?>
+          <div class="alert alert-danger">
+            <strong><?php echo $sf_user->getFlash('err') ?></strong>
+          </div>
+      <?php endif ?>
       <?php echo $sf_content ?>
       <script>
           $(document).ready(function () {

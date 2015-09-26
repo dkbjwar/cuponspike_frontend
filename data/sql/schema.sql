@@ -1,6 +1,4 @@
-CREATE TABLE consumption (cns_id INT, cns_user_id INT NOT NULL, cns_ip VARCHAR(11) NOT NULL, cns_created_at datetime NOT NULL, PRIMARY KEY(cns_id)) ENGINE = INNODB;
-CREATE TABLE coupon (cup_id VARCHAR(36), cup_name VARCHAR(50) NOT NULL, cup_exp_date datetime NOT NULL, cup_max_use INT NOT NULL, cup_stock INT NOT NULL, PRIMARY KEY(cup_id)) ENGINE = INNODB;
-CREATE TABLE cupon (cup_id VARCHAR(36), cup_name VARCHAR(50) NOT NULL, cup_exp_date datetime NOT NULL, cup_max_use INT NOT NULL, PRIMARY KEY(cup_id)) ENGINE = INNODB;
+CREATE TABLE app_info (id BIGINT AUTO_INCREMENT, app_field VARCHAR(15) NOT NULL, app_value VARCHAR(15) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_forgot_password (id BIGINT AUTO_INCREMENT, user_id BIGINT NOT NULL, unique_key VARCHAR(255), expires_at DATETIME NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX user_id_idx (user_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_group (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, description TEXT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_group_permission (group_id BIGINT, permission_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(group_id, permission_id)) ENGINE = INNODB;

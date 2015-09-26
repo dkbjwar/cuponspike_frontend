@@ -1,0 +1,1 @@
+<h2><a href="<?php echo url_for('home/index') ?>">Go Back to home</a></h2>

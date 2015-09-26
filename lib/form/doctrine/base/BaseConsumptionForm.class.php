@@ -16,14 +16,16 @@ abstract class BaseConsumptionForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'cns_id'         => new sfWidgetFormInputHidden(),
-      'cns_user_id'    => new sfWidgetFormInputText(),
+      'cns_cup_id'     => new sfWidgetFormInputText(),
+      'cns_username'   => new sfWidgetFormInputText(),
       'cns_ip'         => new sfWidgetFormInputText(),
       'cns_created_at' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'cns_id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('cns_id')), 'empty_value' => $this->getObject()->get('cns_id'), 'required' => false)),
-      'cns_user_id'    => new sfValidatorPass(),
+      'cns_cup_id'     => new sfValidatorPass(),
+      'cns_username'   => new sfValidatorPass(),
       'cns_ip'         => new sfValidatorPass(),
       'cns_created_at' => new sfValidatorPass(),
     ));
