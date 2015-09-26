@@ -1,0 +1,7 @@
+cache/*
+log/*
+config/include.php
+lib/vendor
+BUILD_NUMBER
+nbproject
+config/databases.yml

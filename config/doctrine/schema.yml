@@ -1,0 +1,16 @@
+Coupon:
+  columns:
+    cup_id:         { type: varchar(36) , primary: true }
+    cup_name:       { type: varchar(50), notnull: true }
+    cup_exp_date:   { type: datetime, notnull: true }
+    cup_max_use:    { type: int, notnull: true }
+    cup_stock:      { type: int, notnull: true }
+
+Consumption:
+  columns:
+    cns_id:         { type: int, primary: true }
+    cns_user_id:    { type: int, notnull: true }
+    cns_ip:         { type: varchar(11), notnull: true }
+    cns_created_at: { type: datetime, notnull: true }
+  relations:
+    sfGuardUser:    { local: cns_id, foreign: id, foreignAlias: Consumptions }
